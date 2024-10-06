@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		33ACBEF42CB2DED200263ABC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ACBEF32CB2DED200263ABC /* AppDelegate.swift */; };
 		33ACBEF62CB2DED200263ABC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ACBEF52CB2DED200263ABC /* SceneDelegate.swift */; };
-		33ACBEF82CB2DED200263ABC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ACBEF72CB2DED200263ABC /* ViewController.swift */; };
-		33ACBEFB2CB2DED200263ABC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33ACBEF92CB2DED200263ABC /* Main.storyboard */; };
 		33ACBEFD2CB2DED500263ABC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33ACBEFC2CB2DED500263ABC /* Assets.xcassets */; };
 		33ACBF002CB2DED500263ABC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33ACBEFE2CB2DED500263ABC /* LaunchScreen.storyboard */; };
+		33ACBF082CB2E19C00263ABC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ACBF072CB2E19C00263ABC /* HomeViewController.swift */; };
+		33ACBF102CB2E2AE00263ABC /* Voo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ACBF0F2CB2E2AE00263ABC /* Voo.swift */; };
+		33ACBF242CB2E40E00263ABC /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ACBF182CB2E40E00263ABC /* UITableView.swift */; };
+		33ACBF292CB2E40E00263ABC /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ACBF1D2CB2E40E00263ABC /* Layer.swift */; };
+		33ACBF2D2CB2E4F200263ABC /* VooTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ACBF2B2CB2E4F200263ABC /* VooTableViewCell.swift */; };
+		33ACBF2E2CB2E4F200263ABC /* VooTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33ACBF2C2CB2E4F200263ABC /* VooTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		33ACBEF02CB2DED200263ABC /* Way Airlines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Way Airlines.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33ACBEF32CB2DED200263ABC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33ACBEF52CB2DED200263ABC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		33ACBEF72CB2DED200263ABC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		33ACBEFA2CB2DED200263ABC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		33ACBEFC2CB2DED500263ABC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33ACBEFF2CB2DED500263ABC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33ACBF012CB2DED500263ABC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33ACBF072CB2E19C00263ABC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		33ACBF0F2CB2E2AE00263ABC /* Voo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voo.swift; sourceTree = "<group>"; };
+		33ACBF182CB2E40E00263ABC /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		33ACBF1D2CB2E40E00263ABC /* Layer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layer.swift; sourceTree = "<group>"; };
+		33ACBF2B2CB2E4F200263ABC /* VooTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VooTableViewCell.swift; sourceTree = "<group>"; };
+		33ACBF2C2CB2E4F200263ABC /* VooTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VooTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,59 @@
 		33ACBEF22CB2DED200263ABC /* Way Airlines */ = {
 			isa = PBXGroup;
 			children = (
+				33ACBF112CB2E40E00263ABC /* Extensions */,
 				33ACBEF32CB2DED200263ABC /* AppDelegate.swift */,
 				33ACBEF52CB2DED200263ABC /* SceneDelegate.swift */,
-				33ACBEF72CB2DED200263ABC /* ViewController.swift */,
-				33ACBEF92CB2DED200263ABC /* Main.storyboard */,
+				33ACBF092CB2E1A000263ABC /* Home */,
 				33ACBEFC2CB2DED500263ABC /* Assets.xcassets */,
 				33ACBEFE2CB2DED500263ABC /* LaunchScreen.storyboard */,
 				33ACBF012CB2DED500263ABC /* Info.plist */,
 			);
 			path = "Way Airlines";
+			sourceTree = "<group>";
+		};
+		33ACBF092CB2E1A000263ABC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				33ACBF2A2CB2E4C200263ABC /* Cell */,
+				33ACBF0C2CB2E22900263ABC /* Model */,
+				33ACBF0A2CB2E20700263ABC /* ViewController */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		33ACBF0A2CB2E20700263ABC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				33ACBF072CB2E19C00263ABC /* HomeViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		33ACBF0C2CB2E22900263ABC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				33ACBF0F2CB2E2AE00263ABC /* Voo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		33ACBF112CB2E40E00263ABC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				33ACBF182CB2E40E00263ABC /* UITableView.swift */,
+				33ACBF1D2CB2E40E00263ABC /* Layer.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		33ACBF2A2CB2E4C200263ABC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				33ACBF2B2CB2E4F200263ABC /* VooTableViewCell.swift */,
+				33ACBF2C2CB2E4F200263ABC /* VooTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +179,7 @@
 			files = (
 				33ACBF002CB2DED500263ABC /* LaunchScreen.storyboard in Resources */,
 				33ACBEFD2CB2DED500263ABC /* Assets.xcassets in Resources */,
-				33ACBEFB2CB2DED200263ABC /* Main.storyboard in Resources */,
+				33ACBF2E2CB2E4F200263ABC /* VooTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +190,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33ACBEF82CB2DED200263ABC /* ViewController.swift in Sources */,
+				33ACBF102CB2E2AE00263ABC /* Voo.swift in Sources */,
+				33ACBF292CB2E40E00263ABC /* Layer.swift in Sources */,
 				33ACBEF42CB2DED200263ABC /* AppDelegate.swift in Sources */,
 				33ACBEF62CB2DED200263ABC /* SceneDelegate.swift in Sources */,
+				33ACBF242CB2E40E00263ABC /* UITableView.swift in Sources */,
+				33ACBF082CB2E19C00263ABC /* HomeViewController.swift in Sources */,
+				33ACBF2D2CB2E4F200263ABC /* VooTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		33ACBEF92CB2DED200263ABC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				33ACBEFA2CB2DED200263ABC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		33ACBEFE2CB2DED500263ABC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -291,9 +339,8 @@
 				INFOPLIST_FILE = "Way Airlines/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -318,9 +365,8 @@
 				INFOPLIST_FILE = "Way Airlines/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
