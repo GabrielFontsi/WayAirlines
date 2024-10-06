@@ -9,7 +9,17 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    var voos = [Voo]()
+    var voos = [Flight]()
+    let viewModel: HomeViewModel
+    
+    init(viewModel: HomeViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -22,9 +32,10 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        voos.append(Voo(horario: "2323", status: "dsdsd", embarque: "asas"))
+        self.voos = viewModel.listaDeVoos(status: nil)
         self.setupConstraints()
         self.view.backgroundColor = .white
+        
     }
     
     func setupConstraints(){

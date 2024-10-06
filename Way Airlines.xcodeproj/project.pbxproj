@@ -12,11 +12,13 @@
 		33ACBEFD2CB2DED500263ABC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33ACBEFC2CB2DED500263ABC /* Assets.xcassets */; };
 		33ACBF002CB2DED500263ABC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33ACBEFE2CB2DED500263ABC /* LaunchScreen.storyboard */; };
 		33ACBF082CB2E19C00263ABC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ACBF072CB2E19C00263ABC /* HomeViewController.swift */; };
-		33ACBF102CB2E2AE00263ABC /* Voo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ACBF0F2CB2E2AE00263ABC /* Voo.swift */; };
+		33ACBF102CB2E2AE00263ABC /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ACBF0F2CB2E2AE00263ABC /* Flight.swift */; };
 		33ACBF242CB2E40E00263ABC /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ACBF182CB2E40E00263ABC /* UITableView.swift */; };
 		33ACBF292CB2E40E00263ABC /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ACBF1D2CB2E40E00263ABC /* Layer.swift */; };
 		33ACBF2D2CB2E4F200263ABC /* VooTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ACBF2B2CB2E4F200263ABC /* VooTableViewCell.swift */; };
 		33ACBF2E2CB2E4F200263ABC /* VooTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33ACBF2C2CB2E4F200263ABC /* VooTableViewCell.xib */; };
+		33ACBF302CB2E92900263ABC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ACBF2F2CB2E92900263ABC /* HomeViewModel.swift */; };
+		33ACBF342CB2F35A00263ABC /* Mock.json in Resources */ = {isa = PBXBuildFile; fileRef = 33ACBF332CB2F35A00263ABC /* Mock.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,11 +29,13 @@
 		33ACBEFF2CB2DED500263ABC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33ACBF012CB2DED500263ABC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33ACBF072CB2E19C00263ABC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		33ACBF0F2CB2E2AE00263ABC /* Voo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voo.swift; sourceTree = "<group>"; };
+		33ACBF0F2CB2E2AE00263ABC /* Flight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
 		33ACBF182CB2E40E00263ABC /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		33ACBF1D2CB2E40E00263ABC /* Layer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layer.swift; sourceTree = "<group>"; };
 		33ACBF2B2CB2E4F200263ABC /* VooTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VooTableViewCell.swift; sourceTree = "<group>"; };
 		33ACBF2C2CB2E4F200263ABC /* VooTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VooTableViewCell.xib; sourceTree = "<group>"; };
+		33ACBF2F2CB2E92900263ABC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		33ACBF332CB2F35A00263ABC /* Mock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Mock.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,7 @@
 				33ACBF112CB2E40E00263ABC /* Extensions */,
 				33ACBEF32CB2DED200263ABC /* AppDelegate.swift */,
 				33ACBEF52CB2DED200263ABC /* SceneDelegate.swift */,
+				33ACBF332CB2F35A00263ABC /* Mock.json */,
 				33ACBF092CB2E1A000263ABC /* Home */,
 				33ACBEFC2CB2DED500263ABC /* Assets.xcassets */,
 				33ACBEFE2CB2DED500263ABC /* LaunchScreen.storyboard */,
@@ -81,6 +86,7 @@
 				33ACBF2A2CB2E4C200263ABC /* Cell */,
 				33ACBF0C2CB2E22900263ABC /* Model */,
 				33ACBF0A2CB2E20700263ABC /* ViewController */,
+				33ACBF2F2CB2E92900263ABC /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -96,7 +102,7 @@
 		33ACBF0C2CB2E22900263ABC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				33ACBF0F2CB2E2AE00263ABC /* Voo.swift */,
+				33ACBF0F2CB2E2AE00263ABC /* Flight.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -177,6 +183,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33ACBF342CB2F35A00263ABC /* Mock.json in Resources */,
 				33ACBF002CB2DED500263ABC /* LaunchScreen.storyboard in Resources */,
 				33ACBEFD2CB2DED500263ABC /* Assets.xcassets in Resources */,
 				33ACBF2E2CB2E4F200263ABC /* VooTableViewCell.xib in Resources */,
@@ -190,9 +197,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33ACBF102CB2E2AE00263ABC /* Voo.swift in Sources */,
+				33ACBF102CB2E2AE00263ABC /* Flight.swift in Sources */,
 				33ACBF292CB2E40E00263ABC /* Layer.swift in Sources */,
 				33ACBEF42CB2DED200263ABC /* AppDelegate.swift in Sources */,
+				33ACBF302CB2E92900263ABC /* HomeViewModel.swift in Sources */,
 				33ACBEF62CB2DED200263ABC /* SceneDelegate.swift in Sources */,
 				33ACBF242CB2E40E00263ABC /* UITableView.swift in Sources */,
 				33ACBF082CB2E19C00263ABC /* HomeViewController.swift in Sources */,

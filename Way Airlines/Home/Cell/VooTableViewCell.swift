@@ -12,9 +12,9 @@ class VooTableViewCell: UITableViewCell {
     
     @IBOutlet weak var horarioLabel: UILabel!
     
-    var voo: Voo? {
+    var voo: Flight? {
         didSet {
-            horarioLabel.text = voo?.horario
+            horarioLabel.text = voo?.arrival_time
         }
     }
 }
