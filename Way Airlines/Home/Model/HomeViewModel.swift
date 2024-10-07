@@ -17,11 +17,13 @@ class HomeViewModelImpl: HomeViewModel {
     
     private var flights = [Flight]()
     private let flightService: FlightService
+    
+    
 
     init(flightService: FlightService) {
         self.flightService = flightService
     }
-
+    
     func getFlights() -> [Flight] {
     self.flights = flightService.fetchFlights()
         return flights

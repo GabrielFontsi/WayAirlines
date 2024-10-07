@@ -35,19 +35,19 @@ class AeroportosViewController: UIViewController {
     }()
     
     func uniqueAirports(from flights: [Flight]) -> [Flight] {
-            var uniqueFlights = [Flight]()
-            var seenAirports = Set<String>()
-            
-            for flight in flights {
-                let airportKey = "\(flight.departure_airport) - \(flight.arrival_airport)"
-                
-                if !seenAirports.contains(airportKey) {
-                    uniqueFlights.append(flight)
-                    seenAirports.insert(airportKey)
-                }
-            }
-            return uniqueFlights
-        }
+           var uniqueFlights = [Flight]()
+           var seenAirports = Set<String>()
+           
+           for flight in flights {
+               let airportKey = "\(flight.departure_airport) - \(flight.arrival_airport)"
+               
+               if !seenAirports.contains(airportKey) {
+                   uniqueFlights.append(flight)
+                   seenAirports.insert(airportKey)
+               }
+           }
+           return uniqueFlights
+       }
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -62,7 +62,7 @@ class AeroportosViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.flights = uniqueAirports(from: viewModel.listaDeVoos(status: nil))
+        self.flights = uniqueAirports(from: viewModel.getFlights())
         self.setupAddSubview()
         self.setupConstraints()
         self.setupNavigationBar()
