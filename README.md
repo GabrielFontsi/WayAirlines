@@ -9,7 +9,7 @@ Swift: Linguagem de programação principal utilizada para o desenvolvimento do 
 UIKit: Framework utilizado para construir a interface do usuário.
 MVVM: Arquitetura adotada para facilitar a organização e o gerenciamento do código.
 Como Executar
-Clone o repositório: git clone https://github.com/seuusuario/WayAirlines.git
+Clone o repositório: git clone https://github.com/GabrielFontsi/WayAirlines
 
 # Teste
 Para realizar os testes Command + U
