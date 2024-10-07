@@ -36,20 +36,11 @@ class DetalhesVooViewController: UIViewController {
     lazy var stackView: UIStackView = {
            let stackView = UIStackView(arrangedSubviews: [
                airportImageImageView,
-               backgroundImageImageView,
-               completeInformationLabel,
-               flightIdLabel,
-               statusLabel,
-               completion_statusLabel,
-               departure_timeLabel,
-               arrival_timeLabel,
-               departureLabel,
-               arrivalLabel,
-               dateLabel,
-               airplaneLabel
+               backgroundImageImageView
            ])
            stackView.translatesAutoresizingMaskIntoConstraints = false
            stackView.axis = .vertical
+        stackView.alignment = .center
            stackView.spacing = 16
            return stackView
        }()
@@ -68,10 +59,11 @@ class DetalhesVooViewController: UIViewController {
     lazy var backgroundImageImageView: UIImageView = {
        let imageView = UIImageView()
        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = .white
+       imageView.backgroundColor = .white
        imageView.setCornerRadius(cornesRadius: 30, typeCorners:[.superiorEsquerdo, .superiorDireito])
-        imageView.setCardShadow()
+       imageView.setCardShadow()
        imageView.contentMode = .scaleAspectFit
+       imageView.heightAnchor.constraint(equalToConstant: 500).isActive = true
        return imageView
    }()
     
@@ -189,105 +181,80 @@ class DetalhesVooViewController: UIViewController {
        
     }
     
-    func setupSubview(){
-        
-        self.view.addSubview(scrollView)
-        self.scrollView.addSubview(contentView)
-        self.contentView.addSubview(stackView)
-        
-        self.view.addSubview(scrollView)
-        self.scrollView.addSubview(stackView)
-
-        self.stackView.addSubview(airportImageImageView)
-        self.stackView.addSubview(backgroundImageImageView)
-        
-//        self.backgroundImageImageView.addSubview(self.completeInformationLabel)
-//        self.backgroundImageImageView.addSubview(self.flightIdLabel)
-//        self.backgroundImageImageView.addSubview(self.statusLabel)
-//        self.backgroundImageImageView.addSubview(self.completion_statusLabel)
-//        self.backgroundImageImageView.addSubview(self.departure_timeLabel)
-//        self.backgroundImageImageView.addSubview(self.arrival_timeLabel)
-//        self.backgroundImageImageView.addSubview(self.departureLabel)
-//        self.backgroundImageImageView.addSubview(self.arrivalLabel)
-//        self.backgroundImageImageView.addSubview(self.dateLabel)
-//        self.backgroundImageImageView.addSubview(self.airplaneLabel)
-    }
+    func setupSubview() {
+           view.addSubview(scrollView)
+           scrollView.addSubview(contentView)
+           contentView.addSubview(stackView)
+           backgroundImageImageView.addSubview(completeInformationLabel)
+           backgroundImageImageView.addSubview(flightIdLabel)
+           backgroundImageImageView.addSubview(statusLabel)
+           backgroundImageImageView.addSubview(completion_statusLabel)
+           backgroundImageImageView.addSubview(departure_timeLabel)
+           backgroundImageImageView.addSubview(arrival_timeLabel)
+           backgroundImageImageView.addSubview(departureLabel)
+           backgroundImageImageView.addSubview(arrivalLabel)
+           backgroundImageImageView.addSubview(dateLabel)
+           backgroundImageImageView.addSubview(airplaneLabel)
+       }
     
-    func setupConstraints(){
-        NSLayoutConstraint.activate([
-            
-//            self.scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-//            self.scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//            self.scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//            self.scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-//
-//            self.stackView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-//            self.stackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-//            self.stackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-//            self.stackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-//            self.stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-//
-//            self.airportImageImageView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-//            self.airportImageImageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 18),
-//            self.airportImageImageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -18),
-//            self.airportImageImageView.heightAnchor.constraint(equalToConstant: 250),
-//
-//            self.backgroundImageImageView.topAnchor.constraint(equalTo: self.airportImageImageView.bottomAnchor, constant: 16),
-//            self.backgroundImageImageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-//            self.backgroundImageImageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-//            self.backgroundImageImageView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-//
-//
-//            self.completeInformationLabel.topAnchor.constraint(equalTo: self.backgroundImageImageView.topAnchor, constant: 18),
-//            self.completeInformationLabel.leadingAnchor.constraint(equalTo: self.backgroundImageImageView.leadingAnchor, constant: 18),
-//
-//            self.flightIdLabel.topAnchor.constraint(equalTo: self.completeInformationLabel.bottomAnchor, constant: 18),
-//            self.flightIdLabel.leadingAnchor.constraint(equalTo: backgroundImageImageView.leadingAnchor, constant: 18),
-//
-//            self.statusLabel.topAnchor.constraint(equalTo: self.flightIdLabel.bottomAnchor, constant: 8),
-//            self.statusLabel.leadingAnchor.constraint(equalTo: completeInformationLabel.leadingAnchor),
-//
-//            self.completion_statusLabel.topAnchor.constraint(equalTo: self.statusLabel.bottomAnchor, constant: 8),
-//            self.completion_statusLabel.leadingAnchor.constraint(equalTo: completeInformationLabel.leadingAnchor),
-//
-//            self.departure_timeLabel.topAnchor.constraint(equalTo: self.completion_statusLabel.bottomAnchor, constant: 8),
-//            self.departure_timeLabel.leadingAnchor.constraint(equalTo: completeInformationLabel.leadingAnchor),
-//
-//            self.arrival_timeLabel.topAnchor.constraint(equalTo: self.departure_timeLabel.bottomAnchor, constant: 8),
-//            self.arrival_timeLabel.leadingAnchor.constraint(equalTo: completeInformationLabel.leadingAnchor),
-//
-//            self.departureLabel.topAnchor.constraint(equalTo: self.arrival_timeLabel.bottomAnchor, constant: 8),
-//            self.departureLabel.leadingAnchor.constraint(equalTo: completeInformationLabel.leadingAnchor),
-//            self.departureLabel.trailingAnchor.constraint(equalTo: backgroundImageImageView.trailingAnchor, constant: -18),
-//
-//            self.arrivalLabel.topAnchor.constraint(equalTo: self.departureLabel.bottomAnchor, constant: 8),
-//            self.arrivalLabel.leadingAnchor.constraint(equalTo: completeInformationLabel.leadingAnchor),
-//            self.arrivalLabel.trailingAnchor.constraint(equalTo: backgroundImageImageView.trailingAnchor, constant: -18),
-//
-//            self.dateLabel.topAnchor.constraint(equalTo: self.arrivalLabel.bottomAnchor, constant: 8),
-//            self.dateLabel.leadingAnchor.constraint(equalTo: completeInformationLabel.leadingAnchor),
-//
-//            self.airplaneLabel.topAnchor.constraint(equalTo: self.dateLabel.bottomAnchor, constant: 8),
-//            self.airplaneLabel.leadingAnchor.constraint(equalTo: completeInformationLabel.leadingAnchor),
-            
-            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-                        
-            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-                        
-            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
-            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
- 
-       ])
-    }
+    func setupConstraints() {
+            NSLayoutConstraint.activate([
+                scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+                scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                
+                contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+                contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+                contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+                contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+                contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+                
+                stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+                stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+                stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+                stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
+                
+                airportImageImageView.heightAnchor.constraint(equalToConstant: 250),
+                
+                backgroundImageImageView.topAnchor.constraint(equalTo: airportImageImageView.bottomAnchor, constant: 16),
+                backgroundImageImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                backgroundImageImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                backgroundImageImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                
+                completeInformationLabel.topAnchor.constraint(equalTo: backgroundImageImageView.topAnchor, constant: 18),
+                completeInformationLabel.leadingAnchor.constraint(equalTo: backgroundImageImageView.leadingAnchor, constant: 18),
+                
+                flightIdLabel.topAnchor.constraint(equalTo: completeInformationLabel.bottomAnchor, constant: 18),
+                flightIdLabel.leadingAnchor.constraint(equalTo: backgroundImageImageView.leadingAnchor, constant: 18),
+                
+                statusLabel.topAnchor.constraint(equalTo: flightIdLabel.bottomAnchor, constant: 8),
+                statusLabel.leadingAnchor.constraint(equalTo: completeInformationLabel.leadingAnchor),
+                
+                completion_statusLabel.topAnchor.constraint(equalTo: statusLabel.bottomAnchor, constant: 8),
+                completion_statusLabel.leadingAnchor.constraint(equalTo: completeInformationLabel.leadingAnchor),
+                
+                departure_timeLabel.topAnchor.constraint(equalTo: completion_statusLabel.bottomAnchor, constant: 8),
+                departure_timeLabel.leadingAnchor.constraint(equalTo: completeInformationLabel.leadingAnchor),
+                
+                arrival_timeLabel.topAnchor.constraint(equalTo: departure_timeLabel.bottomAnchor, constant: 8),
+                arrival_timeLabel.leadingAnchor.constraint(equalTo: completeInformationLabel.leadingAnchor),
+                
+                departureLabel.topAnchor.constraint(equalTo: arrival_timeLabel.bottomAnchor, constant: 8),
+                departureLabel.leadingAnchor.constraint(equalTo: completeInformationLabel.leadingAnchor),
+                departureLabel.trailingAnchor.constraint(equalTo: backgroundImageImageView.trailingAnchor, constant: -18),
+                
+                arrivalLabel.topAnchor.constraint(equalTo: departureLabel.bottomAnchor, constant: 8),
+                arrivalLabel.leadingAnchor.constraint(equalTo: completeInformationLabel.leadingAnchor),
+                arrivalLabel.trailingAnchor.constraint(equalTo: backgroundImageImageView.trailingAnchor, constant: -18),
+                
+                dateLabel.topAnchor.constraint(equalTo: arrivalLabel.bottomAnchor, constant: 8),
+                dateLabel.leadingAnchor.constraint(equalTo: completeInformationLabel.leadingAnchor),
+                
+                airplaneLabel.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 8),
+                airplaneLabel.leadingAnchor.constraint(equalTo: completeInformationLabel.leadingAnchor)
+            ])
+        }
     
     func setInformation(){
         self.flightIdLabel.text = "ID voo: \(voo.flight_id)"

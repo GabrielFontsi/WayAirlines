@@ -30,7 +30,7 @@ class HomeViewController: UIViewController {
     lazy var searchBar: UISearchBar = {
         let search = UISearchBar()
         search.translatesAutoresizingMaskIntoConstraints = false
-        search.placeholder = "Pesquisar"
+        search.placeholder = "Pesquisar status do seu voo"
         search.delegate = self
         search.barTintColor = .systemGray5
         search.searchTextField.backgroundColor = .systemGray5
@@ -116,6 +116,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 180
+        return 170
     }
 }

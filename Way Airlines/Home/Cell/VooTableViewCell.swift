@@ -25,7 +25,7 @@ class VooTableViewCell: UITableViewCell {
             statusLabel.text = voo?.status
             departureLabel.text = "Partida: \(voo?.departure_airport ?? "")"
             arrivalLabel.text = "Chegada: \(voo?.arrival_airport ?? "")"
-            flightTimeLabel.text = "Horários: \(voo?.departure_time ?? "") \(voo?.arrival_time ?? "")"
+            flightTimeLabel.text = "Horário partida: \(voo?.departure_time ?? "")  /  Horário chegada \(voo?.arrival_time ?? "")"
             dateLabel.text = "Data: \(voo?.start_date ?? "")"
             airplaneLabel.text = "Avião: \(voo?.airplane_name ?? "")"
             

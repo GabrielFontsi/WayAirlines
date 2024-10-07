@@ -91,7 +91,6 @@
 				33ACBF2A2CB2E4C200263ABC /* Cell */,
 				33ACBF0C2CB2E22900263ABC /* Model */,
 				33ACBF0A2CB2E20700263ABC /* ViewController */,
-				33ACBF2F2CB2E92900263ABC /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -107,6 +106,7 @@
 		33ACBF0C2CB2E22900263ABC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				33ACBF2F2CB2E92900263ABC /* HomeViewModel.swift */,
 				33ACBF0F2CB2E2AE00263ABC /* Flight.swift */,
 			);
 			path = Model;
