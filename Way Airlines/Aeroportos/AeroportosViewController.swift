@@ -35,19 +35,24 @@ class AeroportosViewController: UIViewController {
     }()
     
     func uniqueAirports(from flights: [Flight]) -> [Flight] {
-           var uniqueFlights = [Flight]()
-           var seenAirports = Set<String>()
-           
-           for flight in flights {
-               let airportKey = "\(flight.departure_airport) - \(flight.arrival_airport)"
-               
-               if !seenAirports.contains(airportKey) {
-                   uniqueFlights.append(flight)
-                   seenAirports.insert(airportKey)
-               }
-           }
-           return uniqueFlights
-       }
+            var uniqueFlights = [Flight]()
+            var seenAirports = Set<String>()
+            
+            for flight in flights {
+                
+                let departureAirport = flight.departure_airport.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+                let arrivalAirport = flight.arrival_airport.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+                
+                // Combinar os dois aeroportos em uma chave única
+                let airportKey = "\(departureAirport) - \(arrivalAirport)"
+                
+                if !seenAirports.contains(airportKey) {
+                    uniqueFlights.append(flight)
+                    seenAirports.insert(airportKey)
+                }
+            }
+            return uniqueFlights
+        }
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -62,12 +67,12 @@ class AeroportosViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.flights = uniqueAirports(from: viewModel.getFlights())
+        //self.flights = uniqueAirports(from: viewModel.getFlights())
+        self.flights = viewModel.getFlights()
         self.setupAddSubview()
         self.setupConstraints()
         self.setupNavigationBar()
 
-        // Do any additional setup after loading the view.
     }
     
     func setupAddSubview(){
@@ -98,17 +103,17 @@ class AeroportosViewController: UIViewController {
 extension AeroportosViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText.isEmpty {
-            isSearchActive = false
-        } else {
-            isSearchActive = true
-            filteredFlight = flights.filter({ voo in
-               print(searchText)
-                return voo.departure_airport.lowercased().contains(searchText.lowercased())
-            })
-        }
-        tableView.reloadData()
-    }
+          if searchText.isEmpty {
+              isSearchActive = false
+          } else {
+              isSearchActive = true
+              filteredFlight = flights.filter({ voo in
+                  let departureAirport = voo.departure_airport.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+                  return departureAirport.contains(searchText.lowercased())
+              })
+          }
+          tableView.reloadData()
+      }
     
 }
 
