@@ -13,8 +13,6 @@ class HomeViewController: UIViewController {
     var filteredFlight :[Flight] = []
     var isSearchActive: Bool = false
     
-    
-    
     let viewModel: HomeViewModel
     
     init(viewModel: HomeViewModel) {
@@ -26,11 +24,10 @@ class HomeViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     lazy var searchBar: UISearchBar = {
         let search = UISearchBar()
         search.translatesAutoresizingMaskIntoConstraints = false
-        search.placeholder = "Pesquisar status do seu voo"
+        search.placeholder = "Pesquisar situação do voo
         search.delegate = self
         search.barTintColor = .systemGray5
         search.searchTextField.backgroundColor = .systemGray5
@@ -54,7 +51,6 @@ class HomeViewController: UIViewController {
         self.setupConstraints()
         self.setupNavigationBar()
         self.view.backgroundColor = .systemGray5
-        
     }
     
     func setupConstraints(){
@@ -85,17 +81,16 @@ extension HomeViewController: UISearchBarDelegate {
             isSearchActive = true
             filteredFlight = flights.filter({ voo in
                print(searchText)
-                return voo.status.lowercased().contains(searchText.lowercased())
+                return voo.completion_status.lowercased().contains(searchText.lowercased())
             })
         }
-        
         tableView.reloadData()
-    
     }
     
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: VooTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         cell.voo = isSearchActive ? filteredFlight[indexPath.row] : flights[indexPath.row]
@@ -111,8 +106,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let item = isSearchActive ? filteredFlight[indexPath.row] : flights[indexPath.row]
         let detalheVoo = DetalhesVooViewController(voo: item)
         navigationController?.pushViewController(detalheVoo, animated: true)
-        
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

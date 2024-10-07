@@ -20,7 +20,6 @@ class DetalhesVooViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -45,7 +44,6 @@ class DetalhesVooViewController: UIViewController {
            return stackView
        }()
     
-   
     lazy var airportImageImageView: UIImageView = {
        let imageView = UIImageView()
        imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -89,7 +87,6 @@ class DetalhesVooViewController: UIViewController {
             label.translatesAutoresizingMaskIntoConstraints = false
             label.font = .systemFont(ofSize: 18, weight: .medium)
             label.textColor = .lightGray
-        
             return label
         }()
     
@@ -114,10 +111,8 @@ class DetalhesVooViewController: UIViewController {
             label.translatesAutoresizingMaskIntoConstraints = false
             label.font = .systemFont(ofSize: 18, weight: .medium)
             label.textColor = .lightGray
-        
             return label
         }()
-    
     
     lazy var departureLabel: UILabel = {
             let label = UILabel()
@@ -178,7 +173,6 @@ class DetalhesVooViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [
                 NSAttributedString.Key.foregroundColor: UIColor.white]
         self.title = voo.flight_id
-       
     }
     
     func setupSubview() {
@@ -267,5 +261,4 @@ class DetalhesVooViewController: UIViewController {
         self.dateLabel.text = "Data do voo: \(voo.start_date)"
         self.airplaneLabel.text = "Avião: \(voo.airplane_name)"
     }
-
 }

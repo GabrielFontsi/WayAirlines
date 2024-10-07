@@ -9,7 +9,6 @@ import UIKit
 
 class VooTableViewCell: UITableViewCell {
     
-    
     @IBOutlet weak var backgroundColorView: UIView!
     @IBOutlet weak var flightIDLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
@@ -21,8 +20,8 @@ class VooTableViewCell: UITableViewCell {
     
     var voo: Flight? {
         didSet {
-            flightIDLabel.text = voo?.flight_id
-            statusLabel.text = voo?.status
+            flightIDLabel.text = "Numero do voo: \(voo?.flight_id ?? "")"
+            statusLabel.text = voo?.completion_status
             departureLabel.text = "Partida: \(voo?.departure_airport ?? "")"
             arrivalLabel.text = "Chegada: \(voo?.arrival_airport ?? "")"
             flightTimeLabel.text = "Horário partida: \(voo?.departure_time ?? "")  /  Horário chegada \(voo?.arrival_time ?? "")"
@@ -32,11 +31,13 @@ class VooTableViewCell: UITableViewCell {
             backgroundColorView.setCornerRadius(cornesRadius: 18, typeCorners: [.inferiorDireito, .inferiorEsquerdo, .superiorDireito, .superiorEsquerdo])
             backgroundColorView.setCardShadow()
             
-            if voo?.status == "CONCLUIDO" {
+            if voo?.completion_status == "NO HORARIO" {
                      statusLabel.textColor = .green
-                 } else {
-                     statusLabel.textColor = .red
-                 }
+            } else if voo?.completion_status == "ATRASOU" {
+                statusLabel.textColor = .systemYellow
+            } else {
+                statusLabel.textColor = .red
+            }
              }
         }
     }
