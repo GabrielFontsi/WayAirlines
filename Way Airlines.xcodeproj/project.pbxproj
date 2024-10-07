@@ -19,6 +19,8 @@
 		33ACBF2E2CB2E4F200263ABC /* VooTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33ACBF2C2CB2E4F200263ABC /* VooTableViewCell.xib */; };
 		33ACBF302CB2E92900263ABC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ACBF2F2CB2E92900263ABC /* HomeViewModel.swift */; };
 		33ACBF342CB2F35A00263ABC /* Mock.json in Resources */ = {isa = PBXBuildFile; fileRef = 33ACBF332CB2F35A00263ABC /* Mock.json */; };
+		33E5ED172CB352DA00405011 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E5ED162CB352DA00405011 /* UIView + Extension.swift */; };
+		33E5ED192CB35F5100405011 /* DetalhesVooViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E5ED182CB35F5100405011 /* DetalhesVooViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		33ACBF2C2CB2E4F200263ABC /* VooTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VooTableViewCell.xib; sourceTree = "<group>"; };
 		33ACBF2F2CB2E92900263ABC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		33ACBF332CB2F35A00263ABC /* Mock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Mock.json; sourceTree = "<group>"; };
+		33E5ED162CB352DA00405011 /* UIView + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		33E5ED182CB35F5100405011 /* DetalhesVooViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesVooViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 				33ACBEF52CB2DED200263ABC /* SceneDelegate.swift */,
 				33ACBF332CB2F35A00263ABC /* Mock.json */,
 				33ACBF092CB2E1A000263ABC /* Home */,
+				33E5ED1A2CB35F5900405011 /* Detalhes */,
 				33ACBEFC2CB2DED500263ABC /* Assets.xcassets */,
 				33ACBEFE2CB2DED500263ABC /* LaunchScreen.storyboard */,
 				33ACBF012CB2DED500263ABC /* Info.plist */,
@@ -110,6 +115,7 @@
 		33ACBF112CB2E40E00263ABC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				33E5ED162CB352DA00405011 /* UIView + Extension.swift */,
 				33ACBF182CB2E40E00263ABC /* UITableView.swift */,
 				33ACBF1D2CB2E40E00263ABC /* Layer.swift */,
 			);
@@ -123,6 +129,22 @@
 				33ACBF2C2CB2E4F200263ABC /* VooTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		33E5ED1A2CB35F5900405011 /* Detalhes */ = {
+			isa = PBXGroup;
+			children = (
+				33E5ED1B2CB35F7300405011 /* ViewController */,
+			);
+			path = Detalhes;
+			sourceTree = "<group>";
+		};
+		33E5ED1B2CB35F7300405011 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				33E5ED182CB35F5100405011 /* DetalhesVooViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33ACBF102CB2E2AE00263ABC /* Flight.swift in Sources */,
+				33E5ED192CB35F5100405011 /* DetalhesVooViewController.swift in Sources */,
 				33ACBF292CB2E40E00263ABC /* Layer.swift in Sources */,
 				33ACBEF42CB2DED200263ABC /* AppDelegate.swift in Sources */,
 				33ACBF302CB2E92900263ABC /* HomeViewModel.swift in Sources */,
@@ -205,6 +228,7 @@
 				33ACBF242CB2E40E00263ABC /* UITableView.swift in Sources */,
 				33ACBF082CB2E19C00263ABC /* HomeViewController.swift in Sources */,
 				33ACBF2D2CB2E4F200263ABC /* VooTableViewCell.swift in Sources */,
+				33E5ED172CB352DA00405011 /* UIView + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
