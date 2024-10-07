@@ -62,7 +62,7 @@ class AeroportosViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.flights = uniqueAirports(from: viewModel.listaDeVoos(status: nil))
+        //self.flights = uniqueAirports(from: viewModel.listaDeVoos(status: nil))
         self.setupAddSubview()
         self.setupConstraints()
         self.setupNavigationBar()
@@ -84,8 +84,9 @@ class AeroportosViewController: UIViewController {
     }
     
     func setupNavigationBar(){
+        self.navigationController?.navigationBar.barTintColor = .systemBlue
         self.view.backgroundColor = .systemBlue
-        navigationController?.navigationBar.tintColor = .systemBlue
+        navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         title = "Lista de Aeroportos"

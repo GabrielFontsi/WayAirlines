@@ -167,9 +167,10 @@ class DetalhesVooViewController: UIViewController {
 
     }
     func setupNavigationBar(){
-        self.view.backgroundColor = .systemGray5
-        navigationController?.navigationBar.prefersLargeTitles = false
+        self.navigationController?.navigationBar.barTintColor = .systemBlue
+        self.view.backgroundColor = .systemBlue
         navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.prefersLargeTitles = false
         self.navigationController?.navigationBar.titleTextAttributes = [
                 NSAttributedString.Key.foregroundColor: UIColor.white]
         self.title = voo.flight_id

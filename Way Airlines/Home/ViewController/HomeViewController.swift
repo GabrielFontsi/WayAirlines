@@ -7,13 +7,10 @@
 
 import UIKit
 
-import UIKit
-
 class HomeViewController: UIViewController {
     
     var flights = [Flight]()
-    var filteredFlight: [Flight] = []
-   
+
     let viewModel: HomeViewModel
     let filterOptions = ["TODOS", "NO HORARIO", "ATRASOU", "CANCELADO"]
     
@@ -37,7 +34,7 @@ class HomeViewController: UIViewController {
     lazy var filterTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "Escolha uma uma opção para filtro"
+        textField.placeholder = "Escola uma opção para filtrar"
         textField.inputView = filterPickerView
         textField.textColor = .lightGray
         textField.textAlignment = .center
@@ -58,8 +55,7 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.flights = viewModel.listaDeVoos(status: nil)
-        self.filteredFlight = flights
+        self.flights = viewModel.listaDeVoos()
         self.setupAddSubview()
         self.setupConstraints()
         self.setupNavigationBar()
@@ -91,18 +87,8 @@ class HomeViewController: UIViewController {
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         title = "Lista de Voos"
     }
-    
-    func filterFlights(by status: String) {
-        if status == "TODOS" {
-            self.filteredFlight = flights
-        } else {
-            self.filteredFlight = flights.filter { $0.completion_status == status }
-        }
-        self.tableView.reloadData()
-    }
 }
 
-// MARK: - UIPickerViewDelegate and UIPickerViewDataSource
 extension HomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -120,26 +106,33 @@ extension HomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let selectedFilter = filterOptions[row]
         filterTextField.text = selectedFilter
-        filterFlights(by: selectedFilter)
+        
+        flights = viewModel.filterFlights(by: selectedFilter)
         filterTextField.resignFirstResponder()
+    tableView.reloadData()
     }
 }
 
-// MARK: - UITableViewDelegate and UITableViewDataSource
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredFlight.count
+        return flights.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: VooTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-        cell.voo = filteredFlight[indexPath.row]
+        cell.voo = flights[indexPath.row]
         cell.selectionStyle = .none
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 170
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = flights[indexPath.row]
+        let detalheVC = DetalhesVooViewController(voo: item)
+        navigationController?.pushViewController(detalheVC, animated: true)
     }
 }
