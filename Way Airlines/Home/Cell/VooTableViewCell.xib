@@ -89,7 +89,7 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                <color key="backgroundColor" systemColor="systemBlueColor"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="8Sr-Tz-0m1" secondAttribute="trailing" constant="12" id="7Fh-aX-P0f"/>
                     <constraint firstItem="8Sr-Tz-0m1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="J8H-5V-lcY"/>
@@ -112,8 +112,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

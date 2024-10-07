@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="115" id="KGk-i7-Jjw" customClass="AeroportoTableViewCell" customModule="Way_Airlines" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="343" height="115"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="343" height="115"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PfT-7i-rAT">
+                        <rect key="frame" x="8" y="8" width="327" height="99"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lsp-fA-Wux">
+                                <rect key="frame" x="8" y="19.666666666666671" width="50" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="59F-6P-Rmt"/>
+                                    <constraint firstAttribute="height" constant="60" id="Ygv-ll-CPu"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dsdsd" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xe6-lC-WQC">
+                                <rect key="frame" x="62" y="39.333333333333336" width="257" height="20.333333333333336"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lsp-fA-Wux" firstAttribute="leading" secondItem="PfT-7i-rAT" secondAttribute="leading" constant="8" id="3h9-YW-XKt"/>
+                            <constraint firstItem="lsp-fA-Wux" firstAttribute="centerY" secondItem="PfT-7i-rAT" secondAttribute="centerY" id="8uM-cj-pof"/>
+                            <constraint firstItem="xe6-lC-WQC" firstAttribute="leading" secondItem="lsp-fA-Wux" secondAttribute="trailing" constant="4" id="Okd-ZX-hLO"/>
+                            <constraint firstAttribute="trailing" secondItem="xe6-lC-WQC" secondAttribute="trailing" constant="8" id="fvg-qH-jww"/>
+                            <constraint firstItem="xe6-lC-WQC" firstAttribute="centerY" secondItem="PfT-7i-rAT" secondAttribute="centerY" id="guV-8i-iMu"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="PfT-7i-rAT" secondAttribute="bottom" constant="8" id="0oc-lP-ddK"/>
+                    <constraint firstAttribute="trailing" secondItem="PfT-7i-rAT" secondAttribute="trailing" constant="8" id="Em6-LD-tEH"/>
+                    <constraint firstItem="PfT-7i-rAT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="mH7-ef-Uy2"/>
+                    <constraint firstItem="PfT-7i-rAT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="s8w-69-2oS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="airportImageView" destination="lsp-fA-Wux" id="d3J-Y1-TTp"/>
+                <outlet property="airportLabel" destination="xe6-lC-WQC" id="i8N-Is-lUU"/>
+                <outlet property="backgroundColorImageView" destination="PfT-7i-rAT" id="5Bb-Ep-GGW"/>
+            </connections>
+            <point key="canvasLocation" x="-136.64122137404578" y="12.323943661971832"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

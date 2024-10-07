@@ -1,8 +1,8 @@
 //
-//  UIView + Extension.swift
-//  AppMVVM
+//  SceneDelegate.swift
+//  Way Airlines
 //
-//  Created by Gabriel Fontenele da Silva on 03/07/24.
+//  Created by Gabriel Fontenele da Silva on 06/10/24.
 //
 
 import Foundation

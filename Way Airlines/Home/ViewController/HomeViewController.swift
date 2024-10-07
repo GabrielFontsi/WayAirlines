@@ -7,13 +7,15 @@
 
 import UIKit
 
+import UIKit
+
 class HomeViewController: UIViewController {
     
     var flights = [Flight]()
-    var filteredFlight :[Flight] = []
-    var isSearchActive: Bool = false
-    
+    var filteredFlight: [Flight] = []
+   
     let viewModel: HomeViewModel
+    let filterOptions = ["TODOS", "NO HORARIO", "ATRASOU", "CANCELADO"]
     
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
@@ -24,14 +26,23 @@ class HomeViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    lazy var searchBar: UISearchBar = {
-        let search = UISearchBar()
-        search.translatesAutoresizingMaskIntoConstraints = false
-        search.placeholder = "Pesquisar situação do voo
-        search.delegate = self
-        search.barTintColor = .systemGray5
-        search.searchTextField.backgroundColor = .systemGray5
-        return search
+    lazy var filterPickerView: UIPickerView = {
+        let picker = UIPickerView()
+        picker.translatesAutoresizingMaskIntoConstraints = false
+        picker.delegate = self
+        picker.dataSource = self
+        return picker
+    }()
+        
+    lazy var filterTextField: UITextField = {
+        let textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.placeholder = "Escolha uma uma opção para filtro"
+        textField.inputView = filterPickerView
+        textField.textColor = .lightGray
+        textField.textAlignment = .center
+        textField.borderStyle = .roundedRect
+        return textField
     }()
     
     lazy var tableView: UITableView = {
@@ -40,7 +51,7 @@ class HomeViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
-        tableView.backgroundColor = .systemGray5
+        tableView.backgroundColor = .clear
         tableView.register(type: VooTableViewCell.self)
         return tableView
     }()
@@ -48,64 +59,84 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.flights = viewModel.listaDeVoos(status: nil)
+        self.filteredFlight = flights
+        self.setupAddSubview()
         self.setupConstraints()
         self.setupNavigationBar()
-        self.view.backgroundColor = .systemGray5
     }
     
-    func setupConstraints(){
+    func setupAddSubview() {
+        self.view.addSubview(filterTextField)
         self.view.addSubview(tableView)
-         NSLayoutConstraint.activate([
-            self.tableView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+    }
+    
+    func setupConstraints() {
+        NSLayoutConstraint.activate([
+            self.filterTextField.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 18),
+            self.filterTextField.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 9),
+            self.filterTextField.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -9),
+            self.filterTextField.heightAnchor.constraint(equalToConstant: 32),
+                   
+            self.tableView.topAnchor.constraint(equalTo: self.filterTextField.bottomAnchor, constant: 10),
             self.tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             self.tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
     }
     
-    func setupNavigationBar(){
-        self.view.backgroundColor = .lightGray
+    func setupNavigationBar() {
+        self.view.backgroundColor = .systemBlue
+        navigationController?.navigationBar.tintColor = .systemBlue
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         title = "Lista de Voos"
-        navigationItem.titleView = searchBar
     }
-}
-
-extension HomeViewController: UISearchBarDelegate {
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText.isEmpty {
-            isSearchActive = false
+    func filterFlights(by status: String) {
+        if status == "TODOS" {
+            self.filteredFlight = flights
         } else {
-            isSearchActive = true
-            filteredFlight = flights.filter({ voo in
-               print(searchText)
-                return voo.completion_status.lowercased().contains(searchText.lowercased())
-            })
+            self.filteredFlight = flights.filter { $0.completion_status == status }
         }
-        tableView.reloadData()
+        self.tableView.reloadData()
     }
-    
 }
 
+// MARK: - UIPickerViewDelegate and UIPickerViewDataSource
+extension HomeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return filterOptions.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return filterOptions[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let selectedFilter = filterOptions[row]
+        filterTextField.text = selectedFilter
+        filterFlights(by: selectedFilter)
+        filterTextField.resignFirstResponder()
+    }
+}
+
+// MARK: - UITableViewDelegate and UITableViewDataSource
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return filteredFlight.count
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: VooTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-        cell.voo = isSearchActive ? filteredFlight[indexPath.row] : flights[indexPath.row]
+        cell.voo = filteredFlight[indexPath.row]
         cell.selectionStyle = .none
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return isSearchActive ? filteredFlight.count : flights.count
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let item = isSearchActive ? filteredFlight[indexPath.row] : flights[indexPath.row]
-        let detalheVoo = DetalhesVooViewController(voo: item)
-        navigationController?.pushViewController(detalheVoo, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

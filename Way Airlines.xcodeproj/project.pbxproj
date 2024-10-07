@@ -21,6 +21,10 @@
 		33ACBF342CB2F35A00263ABC /* Mock.json in Resources */ = {isa = PBXBuildFile; fileRef = 33ACBF332CB2F35A00263ABC /* Mock.json */; };
 		33E5ED172CB352DA00405011 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E5ED162CB352DA00405011 /* UIView + Extension.swift */; };
 		33E5ED192CB35F5100405011 /* DetalhesVooViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E5ED182CB35F5100405011 /* DetalhesVooViewController.swift */; };
+		33E5ED1D2CB4459500405011 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E5ED1C2CB4459500405011 /* TabBarViewController.swift */; };
+		33E5ED1F2CB44CDC00405011 /* AeroportosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E5ED1E2CB44CDC00405011 /* AeroportosViewController.swift */; };
+		33E5ED232CB44D2900405011 /* AeroportoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E5ED212CB44D2900405011 /* AeroportoTableViewCell.swift */; };
+		33E5ED242CB44D2900405011 /* AeroportoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33E5ED222CB44D2900405011 /* AeroportoTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		33ACBF332CB2F35A00263ABC /* Mock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Mock.json; sourceTree = "<group>"; };
 		33E5ED162CB352DA00405011 /* UIView + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		33E5ED182CB35F5100405011 /* DetalhesVooViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesVooViewController.swift; sourceTree = "<group>"; };
+		33E5ED1C2CB4459500405011 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		33E5ED1E2CB44CDC00405011 /* AeroportosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AeroportosViewController.swift; sourceTree = "<group>"; };
+		33E5ED212CB44D2900405011 /* AeroportoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AeroportoTableViewCell.swift; sourceTree = "<group>"; };
+		33E5ED222CB44D2900405011 /* AeroportoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AeroportoTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +83,9 @@
 				33ACBF112CB2E40E00263ABC /* Extensions */,
 				33ACBEF32CB2DED200263ABC /* AppDelegate.swift */,
 				33ACBEF52CB2DED200263ABC /* SceneDelegate.swift */,
+				33E5ED1C2CB4459500405011 /* TabBarViewController.swift */,
 				33ACBF332CB2F35A00263ABC /* Mock.json */,
+				33E5ED202CB44CFD00405011 /* Aeroportos */,
 				33ACBF092CB2E1A000263ABC /* Home */,
 				33E5ED1A2CB35F5900405011 /* Detalhes */,
 				33ACBEFC2CB2DED500263ABC /* Assets.xcassets */,
@@ -147,6 +157,16 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		33E5ED202CB44CFD00405011 /* Aeroportos */ = {
+			isa = PBXGroup;
+			children = (
+				33E5ED1E2CB44CDC00405011 /* AeroportosViewController.swift */,
+				33E5ED212CB44D2900405011 /* AeroportoTableViewCell.swift */,
+				33E5ED222CB44D2900405011 /* AeroportoTableViewCell.xib */,
+			);
+			path = Aeroportos;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -209,6 +229,7 @@
 				33ACBF002CB2DED500263ABC /* LaunchScreen.storyboard in Resources */,
 				33ACBEFD2CB2DED500263ABC /* Assets.xcassets in Resources */,
 				33ACBF2E2CB2E4F200263ABC /* VooTableViewCell.xib in Resources */,
+				33E5ED242CB44D2900405011 /* AeroportoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +242,9 @@
 			files = (
 				33ACBF102CB2E2AE00263ABC /* Flight.swift in Sources */,
 				33E5ED192CB35F5100405011 /* DetalhesVooViewController.swift in Sources */,
+				33E5ED1D2CB4459500405011 /* TabBarViewController.swift in Sources */,
 				33ACBF292CB2E40E00263ABC /* Layer.swift in Sources */,
+				33E5ED1F2CB44CDC00405011 /* AeroportosViewController.swift in Sources */,
 				33ACBEF42CB2DED200263ABC /* AppDelegate.swift in Sources */,
 				33ACBF302CB2E92900263ABC /* HomeViewModel.swift in Sources */,
 				33ACBEF62CB2DED200263ABC /* SceneDelegate.swift in Sources */,
@@ -229,6 +252,7 @@
 				33ACBF082CB2E19C00263ABC /* HomeViewController.swift in Sources */,
 				33ACBF2D2CB2E4F200263ABC /* VooTableViewCell.swift in Sources */,
 				33E5ED172CB352DA00405011 /* UIView + Extension.swift in Sources */,
+				33E5ED232CB44D2900405011 /* AeroportoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

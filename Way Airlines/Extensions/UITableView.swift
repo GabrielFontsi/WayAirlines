@@ -1,10 +1,10 @@
 //
-//  UITableView.swift
-//  Bae
+//  SceneDelegate.swift
+//  Way Airlines
 //
-//  Created by Gabriel Fontenele on 07/06/20.
-//  Copyright © 2020 App5m. All rights reserved.
+//  Created by Gabriel Fontenele da Silva on 06/10/24.
 //
+
 
 import UIKit
 
