@@ -20,6 +20,7 @@
 		33ACBF302CB2E92900263ABC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ACBF2F2CB2E92900263ABC /* HomeViewModel.swift */; };
 		33ACBF342CB2F35A00263ABC /* Mock.json in Resources */ = {isa = PBXBuildFile; fileRef = 33ACBF332CB2F35A00263ABC /* Mock.json */; };
 		33D5E5782CB4885B003A8794 /* FlightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D5E5772CB4885B003A8794 /* FlightService.swift */; };
+		33D5E5802CB48C2B003A8794 /* Way_AirlinesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D5E57F2CB48C2B003A8794 /* Way_AirlinesTests.swift */; };
 		33E5ED172CB352DA00405011 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E5ED162CB352DA00405011 /* UIView + Extension.swift */; };
 		33E5ED192CB35F5100405011 /* DetalhesVooViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E5ED182CB35F5100405011 /* DetalhesVooViewController.swift */; };
 		33E5ED1D2CB4459500405011 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E5ED1C2CB4459500405011 /* TabBarViewController.swift */; };
@@ -27,6 +28,16 @@
 		33E5ED232CB44D2900405011 /* AeroportoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E5ED212CB44D2900405011 /* AeroportoTableViewCell.swift */; };
 		33E5ED242CB44D2900405011 /* AeroportoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33E5ED222CB44D2900405011 /* AeroportoTableViewCell.xib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		33D5E5812CB48C2B003A8794 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33ACBEE82CB2DED200263ABC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33ACBEEF2CB2DED200263ABC;
+			remoteInfo = "Way Airlines";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		33ACBEF02CB2DED200263ABC /* Way Airlines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Way Airlines.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +55,8 @@
 		33ACBF2F2CB2E92900263ABC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		33ACBF332CB2F35A00263ABC /* Mock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Mock.json; sourceTree = "<group>"; };
 		33D5E5772CB4885B003A8794 /* FlightService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightService.swift; sourceTree = "<group>"; };
+		33D5E57D2CB48C2B003A8794 /* Way AirlinesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Way AirlinesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		33D5E57F2CB48C2B003A8794 /* Way_AirlinesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Way_AirlinesTests.swift; sourceTree = "<group>"; };
 		33E5ED162CB352DA00405011 /* UIView + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		33E5ED182CB35F5100405011 /* DetalhesVooViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesVooViewController.swift; sourceTree = "<group>"; };
 		33E5ED1C2CB4459500405011 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +73,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		33D5E57A2CB48C2B003A8794 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -68,6 +88,7 @@
 			children = (
 				33D5E5772CB4885B003A8794 /* FlightService.swift */,
 				33ACBEF22CB2DED200263ABC /* Way Airlines */,
+				33D5E57E2CB48C2B003A8794 /* Way AirlinesTests */,
 				33ACBEF12CB2DED200263ABC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				33ACBEF02CB2DED200263ABC /* Way Airlines.app */,
+				33D5E57D2CB48C2B003A8794 /* Way AirlinesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,6 +166,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		33D5E57E2CB48C2B003A8794 /* Way AirlinesTests */ = {
+			isa = PBXGroup;
+			children = (
+				33D5E57F2CB48C2B003A8794 /* Way_AirlinesTests.swift */,
+			);
+			path = "Way AirlinesTests";
+			sourceTree = "<group>";
+		};
 		33E5ED1A2CB35F5900405011 /* Detalhes */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +220,24 @@
 			productReference = 33ACBEF02CB2DED200263ABC /* Way Airlines.app */;
 			productType = "com.apple.product-type.application";
 		};
+		33D5E57C2CB48C2B003A8794 /* Way AirlinesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33D5E5832CB48C2B003A8794 /* Build configuration list for PBXNativeTarget "Way AirlinesTests" */;
+			buildPhases = (
+				33D5E5792CB48C2B003A8794 /* Sources */,
+				33D5E57A2CB48C2B003A8794 /* Frameworks */,
+				33D5E57B2CB48C2B003A8794 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				33D5E5822CB48C2B003A8794 /* PBXTargetDependency */,
+			);
+			name = "Way AirlinesTests";
+			productName = "Way AirlinesTests";
+			productReference = 33D5E57D2CB48C2B003A8794 /* Way AirlinesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -202,6 +250,10 @@
 				TargetAttributes = {
 					33ACBEEF2CB2DED200263ABC = {
 						CreatedOnToolsVersion = 14.1;
+					};
+					33D5E57C2CB48C2B003A8794 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 33ACBEEF2CB2DED200263ABC;
 					};
 				};
 			};
@@ -219,6 +271,7 @@
 			projectRoot = "";
 			targets = (
 				33ACBEEF2CB2DED200263ABC /* Way Airlines */,
+				33D5E57C2CB48C2B003A8794 /* Way AirlinesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -233,6 +286,13 @@
 				33ACBEFD2CB2DED500263ABC /* Assets.xcassets in Resources */,
 				33ACBF2E2CB2E4F200263ABC /* VooTableViewCell.xib in Resources */,
 				33E5ED242CB44D2900405011 /* AeroportoTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33D5E57B2CB48C2B003A8794 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +320,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		33D5E5792CB48C2B003A8794 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33D5E5802CB48C2B003A8794 /* Way_AirlinesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		33D5E5822CB48C2B003A8794 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 33ACBEEF2CB2DED200263ABC /* Way Airlines */;
+			targetProxy = 33D5E5812CB48C2B003A8794 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		33ACBEFE2CB2DED500263ABC /* LaunchScreen.storyboard */ = {
@@ -440,6 +516,40 @@
 			};
 			name = Release;
 		};
+		33D5E5842CB48C2B003A8794 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "CompanyFontsi.Way-AirlinesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Way Airlines.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Way Airlines";
+			};
+			name = Debug;
+		};
+		33D5E5852CB48C2B003A8794 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "CompanyFontsi.Way-AirlinesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Way Airlines.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Way Airlines";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -457,6 +567,15 @@
 			buildConfigurations = (
 				33ACBF052CB2DED500263ABC /* Debug */,
 				33ACBF062CB2DED500263ABC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33D5E5832CB48C2B003A8794 /* Build configuration list for PBXNativeTarget "Way AirlinesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33D5E5842CB48C2B003A8794 /* Debug */,
+				33D5E5852CB48C2B003A8794 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

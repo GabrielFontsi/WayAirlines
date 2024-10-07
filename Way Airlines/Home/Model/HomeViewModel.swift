@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 protocol HomeViewModel {
     func getFlights() -> [Flight]
     func filterFlights(by status: String) -> [Flight]
