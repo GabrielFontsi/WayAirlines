@@ -55,7 +55,7 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.flights = viewModel.listaDeVoos()
+        self.flights = viewModel.getFlights()
         self.setupAddSubview()
         self.setupConstraints()
         self.setupNavigationBar()

@@ -21,7 +21,7 @@ class TabBarViewController: UITabBarController {
         
         let symbolConfiguration = UIImage.SymbolConfiguration(scale: .medium)
         
-        let homeViewModel = HomeViewModel()
+        let homeViewModel = HomeViewModelImpl(flightService: FlightServiceImpl())
         let home = UINavigationController(rootViewController: HomeViewController(viewModel: homeViewModel))
         let homeSymbol = UIImage(systemName: "airplane", withConfiguration: symbolConfiguration)
         home.tabBarItem.image = homeSymbol

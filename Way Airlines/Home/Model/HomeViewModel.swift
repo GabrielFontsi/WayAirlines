@@ -7,20 +7,24 @@
 
 import Foundation
 
-class HomeViewModel {
+protocol HomeViewModel {
+    func getFlights() -> [Flight]
+    func filterFlights(by status: String) -> [Flight]
+}
+
+class HomeViewModelImpl: HomeViewModel {
     
     private var flights = [Flight]()
-    
-    func listaDeVoos() -> [Flight] {
-    self.flights = getFlightsFromJson()
-        return flights
+    private let flightService: FlightService
+
+    init(flightService: FlightService) {
+        self.flightService = flightService
     }
 
-    func getFlightsFromJson() -> [Flight] {
-            guard let url = Bundle.main.url(forResource: "Mock", withExtension: "json"), let data = try? Data(contentsOf: url)  else { return [] }
-        let response = try? JSONDecoder().decode(FlightResponse.self, from: data)
-        return response?.flights ?? []
-        }
+    func getFlights() -> [Flight] {
+    self.flights = flightService.fetchFlights()
+        return flights
+    }
     
     func filterFlights(by status: String) -> [Flight] {
         if status == "TODOS" {

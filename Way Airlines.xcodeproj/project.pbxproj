@@ -19,6 +19,7 @@
 		33ACBF2E2CB2E4F200263ABC /* VooTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33ACBF2C2CB2E4F200263ABC /* VooTableViewCell.xib */; };
 		33ACBF302CB2E92900263ABC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ACBF2F2CB2E92900263ABC /* HomeViewModel.swift */; };
 		33ACBF342CB2F35A00263ABC /* Mock.json in Resources */ = {isa = PBXBuildFile; fileRef = 33ACBF332CB2F35A00263ABC /* Mock.json */; };
+		33D5E5782CB4885B003A8794 /* FlightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D5E5772CB4885B003A8794 /* FlightService.swift */; };
 		33E5ED172CB352DA00405011 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E5ED162CB352DA00405011 /* UIView + Extension.swift */; };
 		33E5ED192CB35F5100405011 /* DetalhesVooViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E5ED182CB35F5100405011 /* DetalhesVooViewController.swift */; };
 		33E5ED1D2CB4459500405011 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E5ED1C2CB4459500405011 /* TabBarViewController.swift */; };
@@ -42,6 +43,7 @@
 		33ACBF2C2CB2E4F200263ABC /* VooTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VooTableViewCell.xib; sourceTree = "<group>"; };
 		33ACBF2F2CB2E92900263ABC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		33ACBF332CB2F35A00263ABC /* Mock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Mock.json; sourceTree = "<group>"; };
+		33D5E5772CB4885B003A8794 /* FlightService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightService.swift; sourceTree = "<group>"; };
 		33E5ED162CB352DA00405011 /* UIView + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		33E5ED182CB35F5100405011 /* DetalhesVooViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesVooViewController.swift; sourceTree = "<group>"; };
 		33E5ED1C2CB4459500405011 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 		33ACBEE72CB2DED200263ABC = {
 			isa = PBXGroup;
 			children = (
+				33D5E5772CB4885B003A8794 /* FlightService.swift */,
 				33ACBEF22CB2DED200263ABC /* Way Airlines */,
 				33ACBEF12CB2DED200263ABC /* Products */,
 			);
@@ -253,6 +256,7 @@
 				33ACBF2D2CB2E4F200263ABC /* VooTableViewCell.swift in Sources */,
 				33E5ED172CB352DA00405011 /* UIView + Extension.swift in Sources */,
 				33E5ED232CB44D2900405011 /* AeroportoTableViewCell.swift in Sources */,
+				33D5E5782CB4885B003A8794 /* FlightService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

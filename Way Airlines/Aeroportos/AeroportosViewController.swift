@@ -62,7 +62,7 @@ class AeroportosViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.flights = uniqueAirports(from: viewModel.listaDeVoos(status: nil))
+//        self.flights = uniqueAirports(from: viewModel.listaDeVoos(status: nil))
         self.setupAddSubview()
         self.setupConstraints()
         self.setupNavigationBar()
